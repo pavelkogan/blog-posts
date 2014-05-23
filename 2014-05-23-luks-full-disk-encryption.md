@@ -13,7 +13,7 @@ Since there don't appear to be any instructions on how to fully encrypt a system
 
 ## Set up partitions (LVM on LUKS)
 
-This is is well-documented elsewhere, so I won't be explaining it. If something is unfamiliar to you, I recommend reading the [ArchWiki page](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS) on the subject before proceeding.
+This is well-documented elsewhere, so I won't be explaining it. If something is unfamiliar to you, I recommend reading the [ArchWiki page](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS) on the subject before proceeding.
 
 ~~~
 parted -s /dev/sda mklabel msdos
@@ -74,7 +74,7 @@ dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
 cryptsetup luksAddKey /dev/sda1 /crypto_keyfile.bin
 ~~~
 
-I tried various methods to get GRUB to load the keyfile into memory and pass it to the kernel, without success. Then, I realised that the initrd itself is something GRUB loads into memory, and `mkinitcpio.conf` has a very convenient `FILES` option...
+I tried various methods to get GRUB to load the keyfile into memory and pass it to the kernel, without success. Then, I realised that the `initrd` image is itself something GRUB loads into memory, and `mkinitcpio.conf` has a very convenient `FILES` option...
 
     FILES=/crypto_keyfile.bin
 
@@ -97,4 +97,4 @@ The keyfile will probably also be retained in memory, but so is the LUKS master 
 
 [^2]: If it doesn't---check `/boot/grub/grub.cfg`---then you can add `cryptodisk` and `luks` to `GRUB_PRELOAD_MODULES`.
 
-[^3]: https://wiki.archlinux.org/index.php/GRUB#Root_encryption
+[^3]: <https://wiki.archlinux.org/index.php/GRUB#Root_encryption>
