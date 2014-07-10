@@ -3,7 +3,7 @@ layout: post
 title: Haskell development with Nix
 ---
 
-Haskell development with cabal was greatly improved by the addition of cabal sandboxes, but cabal hell and issues with non-Haskell dependencies persist. For example, building the gtk bindings is impossible with the latest version of cabal, which I was forced to work around by installing them with the system package manager. When the necessary packages at the right version are unavailable in the package manager, though, an alternative solution needs to be found. Enter [Nix](https://nixos.org/nix/).
+Haskell development with cabal was greatly improved by the addition of cabal sandboxes, but cabal hell and issues with non-Haskell dependencies persist. For example, building the gtk bindings is impossible with the latest version of cabal; I was forced to work around this by installing them with the system package manager. When the necessary packages at the right version are unavailable in the package manager though, an alternative solution needs to be found. Enter [Nix](https://nixos.org/nix/).
 
 I actually first encountered Nix a few years ago, trying out [NixOS](https://nixos.org/) for a while before returning to better supported distributions. Even now, the downsides seem to outweigh the advantages, at least for a single-user system, but with recent attention to using Nix for Haskell development, I decided to try using it solely for that, without dedicating my entire system to NixOS.
 
