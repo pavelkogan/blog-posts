@@ -20,7 +20,7 @@ The dummy sha256 hash is needed to prevent `cabal2nix` from trying to download t
 1. Replace `sha256 = "0";` with `src = "./.";`
 2. Replace the list of function parameters (`{ cabal, mtl, ... }:`) with
 
-       { haskellPackages ? (import nixpkgs {}).haskellPackages }:
+       { haskellPackages ? (import <nixpkgs> {}).haskellPackages }:
 
    If any of the parameters are not Haskell packages, keep them in the list, but add a default value, as above.
 3. Prepend `with haskellPackages;` to the expression body, i.e.
