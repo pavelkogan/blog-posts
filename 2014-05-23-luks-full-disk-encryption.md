@@ -20,6 +20,7 @@ parted -s /dev/sda mklabel msdos
 parted -s /dev/sda mkpart primary 2048s 100%
 cryptsetup luksFormat /dev/sda1
 cryptsetup luksOpen /dev/sda1 lvm
+pvcreate /dev/mapper/lvm
 vgcreate vg /dev/mapper/lvm
 lvcreate -L 4G vg -n swap
 lvcreate -L 15G vg -n root
