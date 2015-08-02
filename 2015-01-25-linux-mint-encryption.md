@@ -34,6 +34,10 @@ Recreate the ramdisk:
 
 Check that everything is where it should be with `lsinitramfs` and reboot.
 
+> Update (02/08/15): Don't forget that since the keyfile is stored on the ramdisk, you should make it only accessible by `root`, as well:
+>
+>     chmod -R g-rwx,o-rwx /boot
+
 ---
 
 [^mint]: It should also work with Debian/Ubuntu (or any distro that uses `initramfs-tools`)
