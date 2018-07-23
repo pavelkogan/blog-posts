@@ -1,5 +1,6 @@
 ---
 layout: post
+redirect_from: /2014/07/13/nix-shell-on-linux-mint/
 title: nix-shell on Linux Mint
 ---
 

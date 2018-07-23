@@ -1,5 +1,6 @@
 ---
 layout: post
+redirect_from: /2014/07/09/haskell-development-with-nix/
 title: Haskell development with Nix
 ---
 

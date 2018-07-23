@@ -1,9 +1,10 @@
 ---
 title: Full disk encryption with LUKS (including /boot)
+redirect_from: /2014/05/23/luks-full-disk-encryption/
 layout: post
 ---
 
-> Update (25/01/15): I wrote a [new post](/2015/01/25/linux-mint-encryption/) about how to achieve the same thing with Linux Mint.
+> Update (25/01/15): I wrote a [new post](/linux-mint-encryption/) about how to achieve the same thing with Linux Mint.
 
 While looking for information about how to encrypt my laptop's hard drive, among the repeated claims that the partition on which `/boot` resides must remain unencrypted, I found the suggestion that GRUB should be able to handle cryptography since it can be set up with a hashed password.
 
