@@ -4,7 +4,7 @@ redirect_from: /2015/01/25/linux-mint-encryption/
 title: Linux Mint encryption
 ---
 
-In my [previous post](/luks-full-disk-encryption/) on full disk encryption I described how to avoid having to enter your passphrase twice. That method, however, only works on Arch. Here's how to do it on Linux Mint[^mint].
+In my [previous post]({{ site.baseurl }}{% post_url 2014-05-23-luks-full-disk-encryption %}) on full disk encryption I described how to avoid having to enter your passphrase twice. That method, however, only works on Arch. Here's how to do it on Linux Mint[^mint].
 
 The initial setup process (with LVM, LUKS and GRUB) is the same as on Arch, but instead of editing `/etc/mkinitcpio.conf`, which doesn't exist on Mint, create `/etc/crypttab`:
 
